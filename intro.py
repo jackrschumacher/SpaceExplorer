@@ -1,6 +1,6 @@
 import math
 import time
-
+from main import *
 print('''
 =========
 SpaceExplorer
@@ -20,8 +20,15 @@ def intro():
 
 user_input = str(input("What would you like to do?"))
 
-
-
+if user_input == "Help" or user_input == "help" or user_input == "hlp":
+    print('''
+    List of Space Explorer Commands
+    -Travel
+    -Supplies
+    -Buy Ship
+    -Planet (Generate a list of planets)
+    -Mine
+    ''')
 
 
 def main():
