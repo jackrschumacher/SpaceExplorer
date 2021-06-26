@@ -18,21 +18,11 @@ def intro():
     print("=========")
     print("Type help for a list of game commands, planets, etc.")
 
-user_input = str(input("What would you like to do?"))
-
-if user_input == "Help" or user_input == "help" or user_input == "hlp":
-    print('''
-    List of Space Explorer Commands
-    -Travel
-    -Supplies
-    -Buy Ship
-    -Planet (Generate a list of planets)
-    -Mine
-    ''')
 
 
 def main():
     intro()
+    game_start()
 
 
 
