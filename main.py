@@ -1,6 +1,7 @@
 from intro import *
 
 def game_start():
+    global starcoin, water_amnt, food_amnt
     user_input = str(input("What would you like to do?"))
     alive = True
 
@@ -42,8 +43,10 @@ def game_start():
                     print("You have chosen to shop for supplies.")
                     print("=========")
                     print("Type list for a list of store items")
+                    starcoin = 1500
+                    print("You have,",starcoin,"StarCoin")
                     item = str(input("What Item do you wish to shop for: "))
-                    while quit = False:
+                    while quit == False and starcoin > 100:
                         if item == "list" or item == "List" or item == "lst" or item == "Lst":
                             print('''
                             List of Store items
@@ -55,8 +58,23 @@ def game_start():
                             ''')
                             item = str(input("What Item do you wish to shop for: "))
                         elif item == "Water" or item == "water" or item == "wtr":
-                            water_amnt = str(input("How much water do you wish to buy:"))
+                            print("=========")
+                            print("Water Costs 10 StarCoin")
+                            water_amnt = int(input("How much water do you wish to buy:"))
                             print("You have chosen to buy:", water_amnt)
+                            starcoin = starcoin - water_amnt * 10
+                            print("You have:",starcoin,"Remaing")
+                        elif item == "Food" or item == "food" or item == "fod":
+                            print("=========")
+                            print("Water cost 25 StarCoin per pound")
+                            food_amnt = int(input("How much food you like purchase: "))
+                            print("You have chosen to buy:", food_amnt)
+                            starcoin = starcoin - food_amnt * 25
+                            print("You have:",starcoin,"Remaing")
+                            
+
+
+
                 else:
                     print("y")
 def main():
