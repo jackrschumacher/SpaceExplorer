@@ -1,4 +1,7 @@
 from intro import *
+import time
+import math
+from random import randrange
 
 def game_start():
     global starcoin, water_amnt, food_amnt
@@ -15,6 +18,9 @@ def game_start():
                 -Mine
                 ''')
     while alive == True:
+        day = 1
+        day = day +1
+        print(day)
         
         if user_input == "Travel" or user_input == "travel" or user_input == "trvl":
             trvl_to = str(input("Where do you wish to travel? (Type List for a list of avaliable planets"))
@@ -55,6 +61,9 @@ def game_start():
                             -Food
                             -HyperFuel
                             -Encoder
+                            -StarGuns
+                            -StarLasers
+
                             ''')
                             item = str(input("What Item do you wish to shop for: "))
                         elif item == "Water" or item == "water" or item == "wtr":
@@ -85,6 +94,33 @@ def game_start():
                             print("You have chosen to buy:",encoder_amnt,"Encoders")
                             starcoin = starcoin - hyperfuel_amnt * 5
                             print("You have:",starcoin,"StarCoin")
+                        elif item == "starguns" or item == "strgns" or item == "StarGuns":
+                            print("=========")
+                            print("You have chosen to purchase StarGuns")
+                            print("StarGuns cost 50 StarCoin")
+                            starguns_amnt = int(input("How many StarGuns would you like to purchase:"))
+                            print("You have chosen to buy:",starguns_amnt,"StarGuns")
+                            starcoin = starcoin - starguns_amnt * 50
+                            print("you have:",starcoin,"StarCoin")
+                        elif item == "StarLasers" or item == "starguns" or item == "strguns" or item == "strgns":
+                            print("=========")
+                            print("You have chosen to purchase StarLasers")
+                            print("StarLasers cost 25 StarCoin")
+                            starlasers_amnt = int(input("How many StarLasers do you wish to buy: "))
+                            print("You have chosen to buy:",starlasers_amnt,"StarLasers")
+                            starcoin = starcoin - starlasers_amnt * 25
+                            print("You have:",starcoin,"StarCoin Remaining")
+                        else:
+                            print("=========")
+                            print("You have chosen to quit the store")
+                            quit = True
+            elif trvl_to == "Mars" or trvl_to == "mars" or trvl_to == "Mrs":
+                print("=========")
+                print("You have chosen to travel to Mars")  
+                
+
+
+                        
                         
 
 
@@ -93,8 +129,7 @@ def game_start():
 
 
 
-                else:
-                    print("y")
+                
 def main():
     intro()
     game_start()
