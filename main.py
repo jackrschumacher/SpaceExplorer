@@ -2,6 +2,7 @@ from intro import *
 import time
 import math
 from random import randrange
+from datetime import datetime
 
 def game_start():
     global starcoin, water_amnt, food_amnt
@@ -18,9 +19,9 @@ def game_start():
                 -Mine
                 ''')
     while alive == True:
-        day = 1
+        day = 0
         day = day +1
-        print(day)
+        
         
         if user_input == "Travel" or user_input == "travel" or user_input == "trvl":
             trvl_to = str(input("Where do you wish to travel? (Type List for a list of avaliable planets"))
@@ -36,8 +37,12 @@ def game_start():
                 
                 ''')
             elif trvl_to == "Earth" or trvl_to == "earth":
+                print("Current Day:", day)
+                now = datetime.now()
+                current_time = now.strftime("%H:%M:%S")
+                print("Current Time:", current_time)
                 print("Your charachter Begins on Earth...")
-                user_input = str(input("Would You like to replenish your ship, shop for a new one, or more"))
+                user_input = str(input("Would You like to buy a new, shop for supplies, or more"))
                 if trvl_to == "skip" or trvl_to == "Skip":
                     print("You have chosen to skip")
                 elif trvl_to == "rep" or user_input == "Rep" or user_input == "Replenish" or user_input == "replinish":
@@ -117,6 +122,13 @@ def game_start():
             elif trvl_to == "Mars" or trvl_to == "mars" or trvl_to == "Mrs":
                 print("=========")
                 print("You have chosen to travel to Mars")  
+        else:
+            print("=========")
+            print("The command you entered is not currently supported")    
+            print("If you would like to request a new feature, please visit our GitHub page at: https://github.com/jackrschumacher/SpaceExplorer")
+            user_input = str(input("What would you like to do?"))
+            print("=========")
+
                 
 
 
