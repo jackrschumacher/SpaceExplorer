@@ -71,6 +71,24 @@ def game_start():
                             print("You have chosen to buy:", food_amnt)
                             starcoin = starcoin - food_amnt * 25
                             print("You have:",starcoin,"Remaing")
+                        elif item == "HyperFuel" or item == "hyperfuel" or item == "hypfl":
+                            print("=========")
+                            print("HyperFuel costs 50 StarCoin")
+                            hyperfuel_amnt = int(input("How much HyperFuel would you like to by:"))
+                            print("You have chosen to buy:",hyperfuel_amnt,"HyperFuel")
+                            starcoin = starcoin - hyperfuel_amnt * 50
+                            print("You have:",starcoin,"Remaining")
+                        elif item == "Encoder" or item == "encoder" or item == "encdr":
+                            print("=========")
+                            print("Encoders cost 5 StarCoin")
+                            encoder_amnt = int(input("How many encoders do you wish to buy: "))
+                            print("You have chosen to buy:",encoder_amnt,"Encoders")
+                            starcoin = starcoin - hyperfuel_amnt * 5
+                            print("You have:",starcoin,"StarCoin")
+                        
+
+
+
                             
 
 
